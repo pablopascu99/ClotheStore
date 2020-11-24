@@ -31,6 +31,11 @@ body{
     color: #efb810;
     font-weight: bolder;
 }
+.dropdown-item:hover{
+    color: #efb810;
+    font-weight: bolder;
+}
+.nav-item
 .text-underlined{
     position: relative;
     overflow: hidden;
