@@ -204,3 +204,26 @@ input, select, textArea{
 .login-card-footer-text{
     margin-left: 22px;
 }
+
+.copyright{
+    text-align: center;
+    background-color: #be9004;
+    padding: 2px 2px;
+
+}
+.socialIcons{
+    text-align: center;
+}
+.copyright p{
+    color: white;
+    font-size: 18px;
+}
+.footerlist{
+    color:black;
+}
+.footerlist:hover{
+    color:white;
+}
+footer{
+    background-color: #eebd29;
+}
