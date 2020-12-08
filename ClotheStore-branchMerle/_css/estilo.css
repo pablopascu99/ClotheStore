@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nobile&display=swap');
+
+body{
+    background-color: rgb(245, 245, 245);    
+}
+.navbar{
+    background-color: white;
+    box-shadow: 0 2px 4px 0 orange;
+}
+.navbar-brand{
+    color: black;
+    font-size: 30px;
+    font-family: 'Antic', sans-serif;
+}
+.navbar-brand:hover{
+    color: #efb810;
+    font-family: 'Antic', sans-serif;
+    font-weight: bolder;
+}
+
+.navbar-toggler{
+    font-size: 40px;
+}
+.navbar-toggler:focus{
+    outline: none;
+}
+.nav-item{
+    color: black;
+    font-size: 20px;
+    font-family: 'Antic', sans-serif;
+}
+.nav-link{
+    color: black;
+}
+.nav-link:hover{
+    color: #efb810;
+    font-weight: bolder;
+}
+.dropdown-item:hover{
+    color: #efb810;
+    font-weight: bolder;
+}
+.nav-item
+.text-underlined{
+    position: relative;
+    overflow: hidden;
+  
+    will-change: color;
+    transition: color .25s ease-out;  
+}  
+.text-underlined::before, 
+.text-underlined::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--textUnderlinedLineColor, currentColor);
+  
+    will-change: width;
+    transition: width .1s ease-out;
+  
+    position: absolute;
+    bottom: 0;
+}  
+.text-underlined::before{
+    left: 50%;
+    transform: translateX(-50%); 
+}  
+.text-underlined::after{
+    right: 50%;
+    transform: translateX(50%); 
+}  
+.text-underlined:hover::before, 
+.text-underlined:hover::after{
+    width: 100%;
+    transition-duration: .2s;
+}
+.container{
+    margin: 2%;
+}
+h1{
+    color: grey;
+    font-family: 'Antic', sans-serif;
+    margin-left: 1%;
+    text-transform: uppercase;
+} 
+p{
+    color: black;
+    font-family: 'Antic', sans-serif;
+}
+.card-img-top{
+    padding: 5% 2%;
+}
+
+#bannerInicio {
+    background-image: url("https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?cs=srgb&dl=pexels-ylanite-koppens-934070.jpg&fm=jpg");
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+  
+#bannerInicio #subtitulo{
+    position: relative;
+    padding-left: 10%;
+    width: 35%;
+    color: #efb810;
+    text-shadow: 2px 2px black;
+    font-family: 'Nobile', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 90%;
+}
+
+#bannerNovedades {
+    background-image: url(https://s3.scoopwhoop.com/anj/winter/147265037.jpg);
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+  
+#bannerNovedades #subtitulo{
+    position: relative;
+    padding-left: 10%;
+    width: 35%;
+    color: #efb810;
+    text-shadow: 2px 2px black;
+    font-family: 'Nobile', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 90%;
+}
+
+#bannerPartesArriba {
+    background-image: url(http://img-cdn.jg.jugem.jp/930/1402137/20180629_2749223.jpg);
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+  
+#bannerPartesArriba #subtitulo{
+    position: relative;
+    padding-left: 10%;
+    width: 35%;
+    color: #efb810;
+    text-shadow: 2px 2px black;
+    font-family: 'Nobile', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 90%;
+}
+
+#bannerPantalones {
+    background-image: url(http://tennis.vteximg.com.br/arquivos/03-banner-jeans-hombre-tennis.jpg);
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+  
+#bannerPantalones #subtitulo{
+    position: relative;
+    padding-left: 10%;
+    width: 35%;
+    color: #efb810;
+    text-shadow: 2px 2px black;
+    font-family: 'Nobile', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 90%;
+}
+
+#bannerZapatilla {
+    background-image: url(https://i.pinimg.com/originals/25/b3/b0/25b3b0e01c8b53c47e341dc78b6ffa3b.jpg);
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+  
+#bannerZapatilla #subtitulo{
+    position: relative;
+    padding-left: 10%;
+    width: 35%;
+    color: #efb810;
+    text-shadow: 2px 2px black;
+    font-family: 'Nobile', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 90%;
+}
+
+#contactoBody{
+    background-color: rgb(224, 222, 222);
+}
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px;
+    resize: vertical 
+  }
+input[type=submit] {
+    background-color:#efb810;
+    color: white;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color:#d6a100;
+}
+input[type]:hover, select:hover, textarea:hover {
+    border-color: #efb810;
+}
+form{
+    background-color: white; 
+    padding: 2%;
+    border-radius: 25px;
+}
+label.error{
+    color: #efb810;
+    background-color: white;
+    margin-left: 0px;
+    font-size: 1rem;
+    font-size: 14px;
+    display: block;
+    font-family: 'Antic', sans-serif;
+    width: 1000px;
+    padding: 0%;
+}
+label{
+    background-color: #efb810;
+    border-radius: 5px;
+	color: white;
+	font-family: 'Nobile', sans-serif;
+	font-size: 14px;
+	text-transform: uppercase;
+	padding: 14px 0 10px 49px;
+	letter-spacing: 1px;
+	margin-left: -45px;
+	width: 330px;
+}
+input, select, textArea{
+    font-family: 'Antic', sans-serif;
+}
+#loginBody{
+    background-color: rgb(224, 222, 222);
+}
+.login-card {
+    border-radius: 27.5px;
+    box-shadow: 10px 10px 10px 10px rgb(192, 192, 192);
+}
+.brand-wrapper h1{
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.login-card-description {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+.login-card-img {
+    border-radius: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px 0 0 22px;
+    object-fit: cover;
+}
+.login-card .login-btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 17px;
+    background-color: #efb810;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+.login-card .login-btn:hover {
+    border: 1px solid  #efb810;
+    background-color: #ffe6a1;
+    color: #000;
+}
+.login-card-footer-text{
+    margin-left: 22px;
+}
+
+.copyright{
+    text-align: center;
+    background-color: #be9004;
+    padding: 2px 2px;
+
+}
+.socialIcons{
+    text-align: center;
+}
+.copyright p{
+    color: white;
+    font-size: 18px;
+}
+.footerlist{
+    color:black;
+}
+.footerlist:hover{
+    color:white;
+}
+footer{
+    background-color: #eebd29;
+}
+#subtitulo{
+    padding-top: 40px;
+    padding-bottom: 30px;
+    color: #efb810;
+    text-shadow: 2px 2px black;
+    font-family: 'Nobile', sans-serif;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
