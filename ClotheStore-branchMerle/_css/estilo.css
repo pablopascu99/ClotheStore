@@ -92,6 +92,16 @@ p{
     padding: 5% 2%;
 }
 
+.infoProducto{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+table,td,th{
+    padding: 5px;
+    margin-left: 10px;
+    text-align: center;
+}
+
 #bannerInicio {
     background-image: url("https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?cs=srgb&dl=pexels-ylanite-koppens-934070.jpg&fm=jpg");
     background-size: cover;
