@@ -5,16 +5,32 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ClotheStore - Contacto</title>
     <link rel="icon" type="image/png" href="_images/favicon.png" sizes="16x16">
-    <title>ClotheStore - Nuestros productos</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="_css/bootstrap.min.css">
     <link rel="stylesheet" href="_css/estilo.css">
 </head>
 
-<body>
+<body id=contactoBody>
+<?php
+//Datos para la conexión
+  // 1. Create a database connection
+  $dbhost = "localhost";
+  $dbuser = "root";
+  $dbpass = "";
+  $dbname = "clothestore";
+  $tablename= "productos";
+  $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+  // Test if connection succeeded
+  if(mysqli_connect_errno()) {
+    die("Database connection failed: " . 
+         mysqli_connect_error() . 
+         " (" . mysqli_connect_errno() . ")"
+    );
+  }
+?>
     <nav class="navbar navbar-expand-sm ">
-        <a class="navbar-brand" href="Inicio.php">CS</a>
+        <a class="navbar-brand" href="Inicio.html">CS</a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown"></div>
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -46,79 +62,85 @@
         </ul>
         </div>
     </nav>
-    <section id="bannerNovedades">
-        <div>
-            <h2 id="subtitulo">Las últimas novedades</h2>
-        </div>
-    </section>
-    <h2 id="subtitulo2">Los más solicitados</h2>
-    <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="_images/camisetamujer1.jpg">
-                    </a>
-                    <ul class="product-links">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> Ir al carrito</a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Camiseta de mujer (Algodón)</a></h3>
-                    <div class="price">19,99€</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="_images/pantaloneshombre1.jpg">
-                    </a>
-                    <span class="product-sale-label">Rebajado</span>
-                    <ul class="product-links">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> Ir al carrito</a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Vaqueros azul oscuro</a></h3>
-                    <div class="price"><span>34,99€</span> 27,99€</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="_images/abrigo1.jpg">
-                    </a>
-                    <span class="product-sale-label">Rebajado</span>
-                    <ul class="product-links">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> Ir al carrito</a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Abrigo negro unisex</a></h3>
-                    <div class="price"><span>69,99€</span> 49,99€</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="_images/camisetamujer2.jpg">
-                    </a>
-                    <ul class="product-links">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> Ir al carrito</a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Top negro para mujer</a></h3>
-                    <div class="price">29,99€</div>
-                </div>
-            </div>
-        </div>
+    <div class="infoProducto">
+        <form action="infoProducto.html" method="post" action="">
+            <h1><strong>Detalles de la prenda</strong></h1>
+            <br>                            
+            <?php
+            
+            $query = "SELECT nombre, precio, marca, talla, stock FROM `$tablename` WHERE nombre = 'Camisa Gucci Unisex'";
+            $result = mysqli_query($connection, $query);
+            
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "<strong>Nombre: </strong>" . $row["nombre"]. " | <strong>Precio: </strong>" . $row["precio"]. " | <strong>Marca: </strong>" . $row["marca"]. " | <strong>Talla: </strong>" . $row["talla"]. " | <strong>Stock: </strong>" . $row["stock"]. "<br>";
+                }
+            } else {
+                echo "0 results";
+            }
+            ?>
+        </form>
+    </div>
+    <div class="infoProducto">
+        <form action="infoProducto.html" method="post" action="">
+            <h1><strong>Detalles de la prenda</strong></h1>
+            <br>                            
+            <?php
+            
+            $query = "SELECT nombre, precio, marca, talla, stock FROM productos WHERE nombre = 'Chaqueta Gucci Deluxe'";
+            $result = mysqli_query($connection, $query);
+            
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "<strong>Nombre: </strong>" . $row["nombre"]. " | <strong>Precio: </strong>" . $row["precio"]. " | <strong>Marca: </strong>" . $row["marca"]. " | <strong>Talla: </strong>" . $row["talla"]. " | <strong>Stock: </strong>" . $row["stock"]. "<br>";
+                }
+            } else {
+                echo "0 results";
+            }
+            ?>
+        </form>
+    </div>    
+    <div class="infoProducto">
+        <form action="infoProducto.html" method="post" action="">
+            <h1><strong>Detalles de la prenda</strong></h1>
+            <br>                            
+            <?php
+            
+            $query = "SELECT nombre, precio, marca, talla, stock FROM productos WHERE nombre = 'Abrigo Negro invernal 2021'";
+            $result = mysqli_query($connection, $query);
+            
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "<strong>Nombre: </strong>" . $row["nombre"]. " | <strong>Precio: </strong>" . $row["precio"]. " | <strong>Marca: </strong>" . $row["marca"]. " | <strong>Talla: </strong>" . $row["talla"]. " | <strong>Stock: </strong>" . $row["stock"]. "<br>";
+                }
+            } else {
+                echo "0 results";
+            }
+            ?>
+        </form>
+    </div>
+    <div class="infoProducto">
+        <form action="infoProducto.html" method="post" action="">
+            <h1><strong>Detalles de la prenda</strong></h1>
+            <br>                            
+            <?php
+            
+            $query = "SELECT nombre, precio, marca, talla, stock FROM productos WHERE nombre = 'Bufanda marron para invierno' ";
+            $result = mysqli_query($connection, $query);
+            
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "<strong>Nombre: </strong>" . $row["nombre"]. " | <strong>Precio: </strong>" . $row["precio"]. " | <strong>Marca: </strong>" . $row["marca"]. " | <strong>Talla: </strong>" . $row["talla"]. " | <strong>Stock: </strong>" . $row["stock"]. "<br>";
+                }
+            } else {
+                echo "0 results";
+            }
+            ?>
+        </form>
     </div>
 
     <footer>
@@ -160,8 +182,6 @@
             </div>
         </div>
     </footer>
-    
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -172,4 +192,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"
+        crossorigin="anonymous"></script>
+    <script src="_js/validar.js"> </script>
 </body>
+
+</html>

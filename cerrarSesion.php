@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    session_destroy();
+    $_SESSION['username']="Usuario";
+?>
+
 <!doctype html>
 <html lang="es">
 
@@ -11,9 +17,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="_css/estilo.css">
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-sm ">
+<nav class="navbar navbar-expand-sm ">
         <a class="navbar-brand" href="Inicio.php">CS</a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown"></div>
         <ul class="navbar-nav">
@@ -46,82 +51,12 @@
         </ul>
         </div>
     </nav>
-    <section id="bannerNovedades">
-        <div>
-            <h2 id="subtitulo">Las últimas novedades</h2>
-        </div>
-    </section>
-    <h2 id="subtitulo2">Los más solicitados</h2>
-    <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="_images/camisetamujer1.jpg">
-                    </a>
-                    <ul class="product-links">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> Ir al carrito</a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Camiseta de mujer (Algodón)</a></h3>
-                    <div class="price">19,99€</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="_images/pantaloneshombre1.jpg">
-                    </a>
-                    <span class="product-sale-label">Rebajado</span>
-                    <ul class="product-links">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> Ir al carrito</a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Vaqueros azul oscuro</a></h3>
-                    <div class="price"><span>34,99€</span> 27,99€</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="_images/abrigo1.jpg">
-                    </a>
-                    <span class="product-sale-label">Rebajado</span>
-                    <ul class="product-links">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> Ir al carrito</a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Abrigo negro unisex</a></h3>
-                    <div class="price"><span>69,99€</span> 49,99€</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="_images/camisetamujer2.jpg">
-                    </a>
-                    <ul class="product-links">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> Ir al carrito</a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Top negro para mujer</a></h3>
-                    <div class="price">29,99€</div>
-                </div>
-            </div>
-        </div>
+    <br>
+    <div class="infoProducto">
+    <h2>Ha cerrado sesión correctamente</h2>
     </div>
 
-    <footer>
+<footer>
         <div class="container py-5">
             <div class="row py-4">
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">

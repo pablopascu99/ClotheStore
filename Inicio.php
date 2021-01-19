@@ -1,0 +1,126 @@
+<?php
+session_start();
+?>
+<!doctype html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="_images/favicon.png" sizes="16x16">
+  <link rel="stylesheet" href="_css/bootstrap.css">
+  <link rel="stylesheet" href="_css/estilo.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css"> -->
+  <title>ClotheStore</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm ">
+    <a class="navbar-brand" href="Inicio.php">CS</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-underlined" href="Blog.html">Sobre nosotros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-underlined" href="Novedades.html">Novedades</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-underlined" href="contacto.html">Contáctanos</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Catálogo
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item text-underlined" href="PartesArriba.html">Partes de arriba</a>
+          <a class="dropdown-item text-underlined" href="Pantalones.html">Pantalones</a>
+          <a class="dropdown-item text-underlined" href="Zapatilla.html">Zapatillas</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-underlined" href="Login.html">Inicio sesión</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-underlined" href="Registro.html">Registro</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link text-underlined" href="cerrarSesion.php">Cerrar Sesión</a>
+      </li>
+      <li class="nav-item">
+      <?php
+        if(!isset($_SESSION['username'])){
+          echo '<a class="nav-link text-underlined">Usuario</a>';
+        }else{
+          echo '<a class="nav-link text-underlined">' . $_SESSION["username"].'</a>';
+        }
+      ?>
+      </li>
+    </ul>
+    </div>
+  </nav>
+
+  <section id="bannerInicio">
+    <div>
+      <h2 class="subtituloMain">Elige tu estilo, elige tu ropa</h2>
+    </div>
+  </section>
+  <p id="slideTexto">Black friday - 50% de descuento</p>
+  
+  <footer>
+        <div class="container py-5">
+            <div class="row py-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <p>Entra y siguenos en nuestras cuentas de las redes sociales para enterarte de todas nuestras
+                        novedades</p>
+                    <ul class="socialIcons list-inline mt-4">
+                        <li class="list-inline-item"><img href="#" alt="InstagramIcon" src="_images/InstagramIcon.png"
+                                width="32" class="iconMedia"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><img href="#" alt="FacebookIcon" src="_images/facebookIcon.png"
+                                width="32" class="iconMedia"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><img href="#" alt="InstagramIcon" src="_images/TwitterIcon.png"
+                                width="32" class="iconMedia"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">Nuestra tienda</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a class="footerlist" href="PartesArriba.html">Partes de arriba</a></li>
+                        <li class="mb-2"><a class="footerlist" href="Pantalones.html">Pantalones</a></li>
+                        <li class="mb-2"><a class="footerlist" href="Zapatilla.html">Zapatillas</a></li>
+                        <li class="mb-2"><a class="footerlist" href="Novedades.html">Novedades</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">Acceso</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a class="footerlist" href="Login.html">Inicio de sesion</a></li>
+                        <li class="mb-2"><a class="footerlist" href="Registro.html">Registro</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>©ClotheStore Derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="_js/texto.js"></script>
+
+</body>
+
+</html>

@@ -99,10 +99,11 @@ if ($found_user) {
 		$result = mysqli_query($connection, $query);
 
 		if ($result) {		
+			$_SESSION['username']=$username;
 			echo'<script type="text/javascript">	
 			document.getElementById("user").innerHTML = $sname;
 			</script>';
-			header("Location: " . "Inicio.html");
+			header("Location: " . "Inicio.php");
 		} else {
 			die("Database query failed. " . mysqli_error($connection));
 		}

@@ -73,7 +73,7 @@ $found_user = attempt_login($username, $password, $connection);
       // Success
 			if(password_verify($password,$found_user["password"])){
 				$_SESSION['username']=$_POST["username"];
-                header("Location: " . "Inicio.html");
+                header("Location: " . "Inicio.php");
             }
             else{
                 header("Location: " . "Blog.html");
